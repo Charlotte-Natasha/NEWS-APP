@@ -1,17 +1,8 @@
 <!-- store html documents -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News App Website</title>
-</head>
-<body>
+{% extends 'bootstrap/base.html'%}
+
     <!-- Navbar -->
-    {% block navbar %}
+{% block navbar %}
     {% include "navbar.html" %}
-    {% end block%}
+{% endblock%}
     
-</body>
-</html>
