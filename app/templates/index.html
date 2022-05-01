@@ -24,9 +24,20 @@
 
           <h1 class="text-center"> Current Affairs</h1>
           <ul>
-        
+            <div class="row">
+              <div class="col-3">
+                <div class="card">
+                  <img src="{{ article.urlToImage }}" class="card-img-top" alt="">
+                  <div class="card-body">
+                    <h3 class="card-title"> {{article.title}} </h3>
+                    <p class="card-text"> {{ article.description}} </p>
+                    <p> {{article.content}} </p>
+                    <p> {{article.published}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </ul>
-
       {% endblock %}
       </body>
 </html>

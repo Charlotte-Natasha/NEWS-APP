@@ -1,6 +1,6 @@
-import urllib3
+from turtle import title
+import urllib3.request, json
 from app import app
-from urllib.request import json
 from .models import news
 
 News = news.News
@@ -23,34 +23,23 @@ def get_news(category):
 
         news_results = None
 
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
-            news_results = process_results(news_results_list)
-
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
+        #  print result list
+        news_results = process_results(news_results_list)
 
     return news_results
-
 def process_results(news_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
-
-    Args:
-        movie_list: A list of dictionaries that contain movie details
-
-    Returns :
-        movie_results: A list of movie objects
-    '''
+    Function that processes news results and transforms it to a list of objects
+    '''  
     news_results = []
-    for news_item in news_list:
-        id = news_item.get('id')
-        title = news_item.get('original_title')
-        overview = news_item.get('overview')
-        poster = news_item.get('poster_path')
-        vote_average = news_item.get('vote_average')
-        vote_count = news_item.get('vote_count')
+    for news_items in news_list:
+        author = news_items.get('author')
+        title = news_items.get('title')
+        description = news_items.get('description')
+        urlToImage = news_items.get('urlToImage')
+        content = news_items.get('content')
+        published = news_items.get('published')
 
-        if poster:
-            news_object = News(id,author,title,description,poster,link,date,content)
-            news_results.append(news_object)
-
-    return news_results    
+        news_object = News(author,title,description,urlToImage,content,published)     
