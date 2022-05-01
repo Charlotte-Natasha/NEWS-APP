@@ -1,5 +1,3 @@
-from sqlite3 import Date
-
 
 # Author - Name of author
 # Title - The name of the article

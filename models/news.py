@@ -3,12 +3,13 @@ class News:
     Class to define news 
     '''
 
-    def __init__(self, id, author, title, description, image, link, date, content ):
+    def __init__(self, id, author, title, description, urlToImage, link, published, content ):
         self.id = id
         self.author = author
         self.title = title
         self.description = description
-        self.image = image
+        self.urlToImage = urlToImage
         self.link = link
-        self.date = date
         self.content = content
+        self.published = published
+        
