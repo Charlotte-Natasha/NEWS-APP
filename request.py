@@ -1,4 +1,3 @@
-from turtle import title
 import urllib3.request, json
 from app import app
 from .models import news
@@ -40,6 +39,6 @@ def process_results(news_list):
         description = news_items.get('description')
         urlToImage = news_items.get('urlToImage')
         content = news_items.get('content')
-        published = news_items.get('published')
+        publishedAt = news_items.get('publishedAt')
 
-        news_object = News(author,title,description,urlToImage,content,published)     
+        news_object = News(author,title,description,urlToImage,content,publishedAt)     
