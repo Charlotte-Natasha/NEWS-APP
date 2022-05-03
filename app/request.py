@@ -2,7 +2,6 @@ import urllib3.request, json
 from app import app
 from .models.news import News
 
-
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
@@ -13,7 +12,7 @@ def get_news():
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = base_url.format(api_key)
+    get_news_url = base_url.format( api_key)
 
     with urllib3.request.urlopen(get_news_url) as url:
         get_news_data = url.read()

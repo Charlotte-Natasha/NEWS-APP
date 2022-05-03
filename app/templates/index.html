@@ -21,25 +21,15 @@
     </head>
       <body>
       {% block content%}
+          <div class="jumbotron" style="color: #404664;">
+            <h1 class="text-center" style="color: #1F1A38;"> Current Affairs</h1>
+          </div>
+          <div class="container">
+            {% for new, des, i in context%}
 
-          <h1 class="text-center"> Current Affairs</h1>
-          <ul>
-            {% for article in articles %}
-            <div class="row">
-              <div class="col-3">
-                <div class="card">
-                  <img src="{{ article.urlToImage }}" class="card-img-top" alt="">
-                  <div class="card-body">
-                    <h3 class="card-title"> {{article.title}} </h3>
-                    <p class="card-text"> {{ article.description}} </p>
-                    <p> {{article.content}} </p>
-                    <p> {{article.publishedAt}} </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
             {% endfor %}
-          </ul>
+          </div>
       {% endblock %}
       </body>
 </html>
