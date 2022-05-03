@@ -29,7 +29,7 @@ def index():
 
     myList = zip(news, desc, img)    
     
-    return render_template("index.html", title = title, context= myList)
+    return render_template("index.html", title = title, context= myList, get_news=process_results)
 
   
 
