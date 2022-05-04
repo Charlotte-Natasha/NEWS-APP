@@ -17,7 +17,7 @@ def get_news():
     get_news_url = base_url.format(api_key)
     response = requests.get(get_news_url).json()
     
-    return response['sources']
+    return response['articles']
 
 
 #     with urllib3.request.urlopen(get_news_url) as url:

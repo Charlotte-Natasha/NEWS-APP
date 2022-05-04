@@ -4,12 +4,23 @@
   <h1 class="text-center" style="color: #1F1A38;"> Current Affairs</h1>
 </div>
 <div class="container">
-  {% for source in sources%}
-  <img src="{{sources.urlToImage}}" alt="">
-  <h3>{{sources.author}}</h3>
-  
-  <h4>{{sources.description]}}</h4>
-  
+  {% for article in articles%}
+  <div class="col-md-3">
+  <div class="card" style="width: 30rem;">
+    <img src="{{article['urlToImage']}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{article['title}']}}</h5>
+      <p class="card-text">{{article['description']}}</p>
+      <p class="card-text">{{article['publishedAt']}}</p>
+    </div>
+  </div>
+</div>
+  <!-- <img src="{{article['urlToImage']}}" alt="">
+
+  <h3>{{article['author}']}}</h3>
+  <h4>{{article['description']}}</h4>
+  <h4>{{article['title']}}</h4> -->
+
   {% endfor %}
 </div>
 {% endblock %}
