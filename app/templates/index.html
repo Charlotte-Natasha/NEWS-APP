@@ -1,26 +1,37 @@
 {% extends 'base.html'%}
+<!-- Styles block -->
+{% block styles%}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+{%endblock%}
+
+<!-- Content block -->
 {% block content%}
-<div class="jumbotron" style="color: #404664;">
-  <h1 class="text-center" style="color: #A8763E;"> Current Affairs</h1>
-</div>
-<div class="container">
-  {% for article in articles%}
-<div class="row d-flex mx-auto">
-    <div class="card col-md-4" style="width: 30rem;" >
-      <img src="{{article['urlToImage']}}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">{{article['title}']}}</p>
-        <p class="card-text">{{article['description']}}</p>
-        <p class="card-text">{{article['publishedAt']}}</p>
+
+  <div class="jumbotron" style="color: #404664;">
+    <h1 class="text-center mb-5 mt-5" style="color: #A8763E;"> Current Affairs</h1>
+  </div>
+<div class="container mb-5">
+  <h3 class="text-center text-capitalize"> {{id}} </h3>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for article in articles%}
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{article['urlToImage']}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text fw-bold"> Author: {{article['author']}}</p>
+          <p class="card-text">{{article['description']}}</p>
+          <a href="{{article.url}}">
+            <button type="button" class="btn btn-success" target="blank"> Continue...</button>
+          </a>
+        </div>
+        <div class="card-footer">
+          <p> {{article['publishedAt']}} </p>
+        </div>
       </div>
     </div>
-</div>
-  <!-- <img src="{{article['urlToImage']}}" alt="">
 
-  <h3>{{article['author}']}}</h3>
-  <h4>{{article['description']}}</h4>
-  <h4>{{article['title']}}</h4> -->
-
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

@@ -1,12 +1,12 @@
-body {
-    background-color: #6F1A07 !important;
-
+body{
+    margin: 0;
+    padding: 0;
+}
+.block{
+    background-color: #612940;
 }
 
 #myNavbar{
-    background-color: aqua;
+    background-color: #0F110C;
 }
 
-html{
-    scroll-behavior: smooth;
-}
